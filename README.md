@@ -1,4 +1,4 @@
 # TodoGraphql
 
 ## Todo Manager on GraphQL
-graphql/ endpoint will reveal the graphiql IDE with documentation.
+```graphql/``` endpoint will reveal the graphiql IDE with documentation.
