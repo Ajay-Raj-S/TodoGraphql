@@ -1,3 +1,9 @@
+"""
+    mutations.py contain the mutations for this app
+        - CreateTodo
+        - UpdateTodo
+        - DeleteTodo
+"""
 import graphene
 
 from .types import TodoType
@@ -5,6 +11,10 @@ from .models import UserTodos
 
 
 class CreateTodo(graphene.Mutation):
+    """
+        Takes todo_msg, is_done as the input
+        Returns id, todo_msg, is_done
+    """
     id = graphene.Int()
     todo_msg = graphene.String()
     is_done = graphene.Boolean()
@@ -21,6 +31,10 @@ class CreateTodo(graphene.Mutation):
 
 
 class UpdateTodo(graphene.Mutation):
+    """
+        Takes id, todo_msg, is_done as the input
+        return update todo
+    """
     todo = graphene.Field(TodoType)
 
     class Arguments:
@@ -38,6 +52,10 @@ class UpdateTodo(graphene.Mutation):
 
 
 class DeleteTodo(graphene.Mutation):
+    """
+        Takes id as the argument
+        Returns is_deleted
+    """
     is_deleted = graphene.Boolean()
 
     class Arguments:

@@ -1,7 +1,10 @@
 from django.db import models
 
-# Create your models here.
+
 class UserTodos(models.Model):
+    """
+        Basic todo model
+    """
     todo_msg = models.CharField(max_length=256)
     is_done = models.BooleanField(default=False)
 
